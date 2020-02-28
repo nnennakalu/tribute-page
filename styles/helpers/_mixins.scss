@@ -1,0 +1,55 @@
+// Base & Layout styles
+@mixin flexbox {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	   -moz-flex-direction: $direction;
+	    -ms-flex-direction: $direction;
+	        flex-direction: $direction;
+}
+
+@mixin align-items($align) {
+	-webkit-align-items: $align;
+	   -moz-align-items: $align;
+	    -ms-align-items: $align;
+	        align-items: $align;
+}
+// Text style
+@mixin  text($size, $line-height) {
+	font-size: $size;
+	line-height: $line-height;
+}
+
+// Image size
+@mixin img-size($width, $height) {
+	max-width: $width;
+	max-height: $height;
+}
+
+// Media queries
+// --small display only
+@mixin mq-small {
+	@media (max-width: $screen-small - 1) {
+		@content;
+	}
+}
+
+// --Medium display only
+@mixin mq-medium {
+	@media (min-width: $screen-small) and (max-width: $screen-large - 1px) {
+		@content;
+	}
+}
+
+// --Large display only
+@mixin mq-large {
+	@media (min-width: $screen-large) {
+		@content;
+	}
+}

@@ -1,0 +1,229 @@
+// Reset styles
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+// Styles for mobile and basic styles for all devices
+body {
+	font-family: 'Segoe UI', Helvetica, sans-serif;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto;
+	
+	@include mq-large {
+		grid-template-columns: auto auto;
+	}
+}
+
+.grid-item {
+	padding: 20px;
+	background-color: $light-color;	
+}
+
+// item2
+.item2 {
+	background-color: $primary-color;
+	padding-right: 5%;
+	padding-left: 5%;
+	background-image:
+		linear-gradient(to right,
+		$color-stop1,
+		$color-stop2),
+		url(../img/rosa-parks-bus.jpg);
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	background-size: 385px 240px;
+
+	@include mq-medium {
+		background-size: 698px 465px;
+	}
+
+	@include mq-large {
+		grid-area: 1 / 2 / span 2 / span 3;
+		background-size: 723px 514px;
+	}
+}
+
+.item2 p {
+	color: $ascent-color;
+	text-align: center;
+	font-weight: bold;
+	@include text(30px, 40px);
+}
+
+dl {
+	color: $secondary-color;
+		@include text(16px, 20px);
+
+	dt {
+		float: left;
+		font-weight: bold;
+	}
+
+	dd {
+		margin-left: 100px;
+		margin-bottom: 15px;
+		text-align: justify;
+
+		@include mq-small {
+			margin-left: 70px;
+		}		
+
+		@include mq-large {
+			margin-left: 70px;
+		}		
+	}
+
+	@include mq-medium {
+		@include text(20px, 27px);
+	}
+
+	@include mq-large {
+		@include text(17px, 25px);
+	}
+}
+
+// item1
+.item1 {
+	padding-left: 5%;
+}
+
+.rosa {
+	order: 1;
+	@include img-size(375px, 564px);
+
+	@include mq-large {
+		@include img-size(399px, 600px);
+		margin: auto;
+		margin-top: 30px;
+	}
+
+	@include mq-medium {
+		@include img-size(399px, 600px);
+		margin: auto;
+		margin-top: 30px;
+	}
+}
+
+h1 {
+	color: $light-color;
+	text-align: center;
+	order: 2;
+	position: absolute;
+	top: 368px;
+	margin-bottom: 0;
+	@include text(90px, 120px);
+	font-weight: normal;
+
+	@include mq-small {
+		top: 302px;
+		@include text(83px, 111px);
+	}
+}
+
+.activist {
+	color: $primary-color;
+	text-align: center;
+	order: 3;
+	margin-top: 6px;
+	margin-bottom: 0;
+	@include text(65px, 86px);
+	font-weight: lighter;
+
+	@include mq-medium {
+		@include text(90px, 120px);
+	}
+
+	@include mq-large {
+		@include text(90px, 120px);
+		margin-top: 56px;
+	}
+}
+
+.quote {
+	text-align: right;
+	order: 4;
+	@include text(35px, 47px);
+	padding-right: 2%;
+
+	@include mq-small {
+		@include text(21px, 30px);
+		padding-right: 15px;
+	}
+
+	@include mq-large {
+		margin-bottom: 0;
+	}
+}
+
+// item3
+.item3 {
+	color: $dark-color;
+	text-align: center;
+	@include text(20px, 27px);
+	padding-left: 5%;
+
+	@include mq-small {
+		@include text(16px, 20px);
+	}
+}
+
+.item3 blockquote {
+
+	@include mq-large {
+		font-style: italic;
+	}
+}
+
+.link {
+	font-weight: bold;
+	margin-left: 2%;
+	margin-right: 2%;
+
+	a {
+		cursor: pointer;
+		color: $ascent-color;
+
+		&:hover {
+			color: saturate($complementary-color, 100);
+			text-decoration: none;
+		}
+	}
+}
+
+// --bg
+.bg {
+	background: linear-gradient(315deg, $secondary-color 20px, #FFF);
+	box-shadow: 100px 20px 45px $color-stop3;
+	padding-top: 29px;
+	padding-bottom: 29px;
+}
+
+// flex container
+.flex-container {
+	@include flexbox;
+	@include flex-direction(column);
+	@include align-items(center);
+	@include mq-small {
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 0;
+	}
+}
+
+// JavaScript style
+.center {
+	text-align: center;
+	list-style-type: none;
+	transition: opacity 1s;
+	display: inherit;	
+	margin-top: 0;
+}
+
+.slide {
+	display: none;
+}
